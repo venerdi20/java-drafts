@@ -1,4 +1,6 @@
-import interfaces.MyPrinter;
+package lambdas;
+
+import lambdas.interfaces.MyPrinter;
 
 import java.util.ArrayList;
 import java.util.List;
