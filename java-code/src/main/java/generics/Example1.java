@@ -18,18 +18,20 @@ public class Example1 {
         request.setMethod("Qwerty");
         System.out.println(request);
 
-        JsonRpcResponseDTO<Person> response = new JsonRpcResponseDTO<>();
+        JsonRpcResponseDTO<Person, ErrorData> response = new JsonRpcResponseDTO<>();
         response.setId(request.getId());
         response.setResult(person);
         response.setJsonRpc(request.getJsonRpc());
         System.out.println(response);
 
-        JsonRpcResponseDTO<Person> errorResponse = new JsonRpcResponseDTO<>();
+        JsonRpcResponseDTO<Person, ErrorData> errorResponse = new JsonRpcResponseDTO<>();
         errorResponse.setId(request.getId());
-        JsonRpcErrorDTO<String> error = new JsonRpcErrorDTO<>();
+        JsonRpcErrorDTO<ErrorData> error = new JsonRpcErrorDTO<>();
         error.setCode(-32601);
         error.setMessage("Method not found");
-        error.setData("qwerty");
+        ErrorData errorData = new ErrorData();
+        errorData.setComment("Все плохо, ничего не работает!");
+        error.setData(errorData);
         errorResponse.setError(error);
         errorResponse.setJsonRpc(request.getJsonRpc());
         System.out.println(errorResponse);

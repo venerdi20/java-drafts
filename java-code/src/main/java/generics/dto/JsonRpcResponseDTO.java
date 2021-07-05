@@ -7,9 +7,9 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class JsonRpcResponseDTO<T> {
+public class JsonRpcResponseDTO<T,E> {
     private String jsonRpc;
     private T result;
-    private JsonRpcErrorDTO error;
+    private JsonRpcErrorDTO<E> error;
     private Integer id;
 }
