@@ -1,4 +1,6 @@
-import interfaces.MyFunction;
+package lambdas;
+
+import lambdas.interfaces.MyFunction;
 
 import java.util.ArrayList;
 import java.util.List;

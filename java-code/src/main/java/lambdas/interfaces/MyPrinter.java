@@ -1,4 +1,4 @@
-package interfaces;
+package lambdas.interfaces;
 
 import java.util.List;
 
